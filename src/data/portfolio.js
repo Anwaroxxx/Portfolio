@@ -139,7 +139,7 @@ export const aboutMe = {
   role: "Full Stack Developer",
   description:
     "Self-taught dev with a Linux heart and a frontend soul. I build fast, clean web apps — from pixel-perfect React UIs to solid Laravel backends. Went through the 1337 piscine and came out with fundamentals carved in C.",
-  email: "anwar.azarzou@gmail.com",
+  email: "anwar.azarzou.6969@gmail.com",
   discord: "https://discord.com/users/1005448906089443328",
   linkedin: "https://www.linkedin.com/in/anwar-azarzou-20b923271/",
   github: "https://github.com/Anwaroxxx",
