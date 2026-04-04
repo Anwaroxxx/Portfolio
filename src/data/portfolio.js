@@ -1,4 +1,3 @@
-// ─── Assets ───────────────────────────────────────────────────────────────────
 import htmlIcon      from "../assets/html.svg";
 import cssIcon       from "../assets/css.svg";
 import reactIcon     from "../assets/react.svg";
@@ -19,7 +18,7 @@ import movieshubImg from "../assets/movieshub.png";
 
 export { profileImg };
 
-// ─── Nav ──────────────────────────────────────────────────────────────────────
+
 export const navLinks = [
   { name: "Home",       href: "#home"       },
   { name: "About",      href: "#about"      },
@@ -29,7 +28,6 @@ export const navLinks = [
   { name: "Contact",    href: "#contact"    },
 ];
 
-// ─── Skills grouped by category ───────────────────────────────────────────────
 export const skillCategories = [
   {
     label: "Frontend",
@@ -67,7 +65,7 @@ export const skillCategories = [
   },
 ];
 
-// ─── Projects ─────────────────────────────────────────────────────────────────
+
 export const projects = [
   {
     title: "Qrib-Lik",
@@ -89,7 +87,6 @@ export const projects = [
   },
 ];
 
-// ─── Experience ───────────────────────────────────────────────────────────────
 export const experience = [
   {
     role: "Full Stack Developer",
@@ -133,7 +130,6 @@ export const experience = [
   },
 ];
 
-// ─── About ────────────────────────────────────────────────────────────────────
 export const aboutMe = {
   name: "Anwar",
   role: "Full Stack Developer",

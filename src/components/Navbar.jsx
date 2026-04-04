@@ -51,7 +51,7 @@ const Navbar = () => {
               className="text-[#4a9a4a] hover:text-[#00ff41] transition-colors font-mono text-base">
               {link.name}
             </a>
-          ))}
+          ))} 
         </div>
       </div>
     </nav>
