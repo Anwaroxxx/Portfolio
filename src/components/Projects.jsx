@@ -9,9 +9,8 @@ const Projects = () => {
   const categories = [
     { id: "all", label: "all_projects", icon: <Terminal size={14} /> },
     { id: "frontend", label: "frontend", icon: <Monitor size={14} /> },
-    { id: "backend", label: "backend", icon: <Server size={14} /> },
     { id: "fullstack", label: "fullstack", icon: <Layers size={14} /> },
-  ];
+];
 
   const filteredProjects = filter === "all" 
     ? projects 

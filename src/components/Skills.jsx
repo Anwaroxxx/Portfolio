@@ -6,8 +6,11 @@ const Skills = () => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section id="skills" className="py-20 sm:py-24 bg-[#010501] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="skills" className="py-20 sm:py-24 bg-[#010501] relative overflow-hidden">
+      {/* Decorative background grid elements */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,65,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,65,0.02)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Header */}
         <motion.div
@@ -15,62 +18,75 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-16"
+          className="text-center mb-14 sm:mb-20"
         >
-          <p className="font-mono text-[#00ff41] text-xs tracking-[4px] uppercase mb-3">// skills.sh</p>
-          <h2 className="font-mono text-3xl sm:text-4xl font-black text-[#e0ffe0] mb-4">Technical Arsenal</h2>
-          <p className="text-[#4a7a4a] max-w-xl mx-auto text-sm sm:text-base">Tools I actually use to ship things.</p>
+          <p className="font-mono text-[#00ff41] text-xs tracking-[4px] uppercase mb-3">// system.capabilities</p>
+          <h2 className="font-mono text-3xl sm:text-5xl font-black text-[#e0ffe0] mb-4 tracking-tighter">Technical Arsenal</h2>
+          <p className="text-[#4a7a4a] max-w-xl mx-auto text-sm sm:text-base font-light">Advanced toolsets for architectural design and high-performance shipping.</p>
         </motion.div>
 
         {/* Categories */}
-        <div className="space-y-12">
+        <div className="space-y-16 sm:space-y-24">
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: catIdx * 0.1 }}
             >
               {/* Category label */}
-              <div className="flex items-center gap-4 mb-6">
-                <span className="font-mono text-xs text-[#00ff41] tracking-[3px] uppercase">
-                  {cat.label}
-                </span>
-                <div className="flex-1 h-px bg-[#0a2a0a]" />
+              <div className="flex items-center gap-6 mb-10">
+                <div className="px-4 py-1.5 border border-[#00ff41]/30 bg-[#00ff41]/5 rounded-sm">
+                  <span className="font-mono text-xs text-[#00ff41] tracking-[4px] uppercase font-bold">
+                    {cat.label}
+                  </span>
+                </div>
+                <div className="flex-1 h-px bg-gradient-to-r from-[#00ff41]/30 to-transparent" />
               </div>
 
-              {/* Skills grid — icon on top, name below */}
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
+              {/* Skills grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
                 {cat.skills.map((skill, skillIdx) => {
                   const key = `${catIdx}-${skillIdx}`;
+                  const isHovered = hovered === key;
+                  
                   return (
                     <motion.div
                       key={skill.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: skillIdx * 0.05 }}
                       onMouseEnter={() => setHovered(key)}
                       onMouseLeave={() => setHovered(null)}
-                      className={`flex flex-col items-center gap-3 px-3 py-5 rounded-xl border cursor-default transition-all duration-200 ${
-                        hovered === key
-                          ? "border-[#00ff41] bg-[#010e01] shadow-[0_0_20px_#00ff4120]"
-                          : "border-[#0a2a0a] bg-[#010801]"
+                      whileHover={{ y: -5, scale: 1.02 }}
+                      className={`relative group p-6 rounded-xl border transition-all duration-300 flex flex-col items-center gap-4 ${
+                        isHovered
+                          ? "border-[#00ff41] bg-[#00ff41]/5 shadow-[0_0_30px_rgba(0,255,65,0.15)]"
+                          : "border-[#0a2a0a] bg-[#010801]/60 backdrop-blur-sm"
                       }`}
                     >
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        className={`w-10 h-10 object-contain transition-all duration-300 ${
-                          hovered === key ? "scale-110 drop-shadow-[0_0_8px_#00ff4166]" : "opacity-80"
-                        }`}
-                      />
-                      <span className={`font-mono text-[11px] sm:text-xs font-semibold text-center leading-tight transition-colors duration-200 ${
-                        hovered === key ? "text-[#00ff41]" : "text-[#6a8a6a]"
-                      }`}>
-                        {skill.name}
-                      </span>
+                      {/* Interactive corner highlights on hover */}
+                      <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff41] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+                      <div className={`absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#00ff41] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+
+                      <div className="relative">
+                         <img
+                          src={skill.icon}
+                          alt={skill.name}
+                          className={`w-12 h-12 object-contain transition-all duration-500 ${
+                            isHovered 
+                              ? "scale-110 rotate-3 filter-none drop-shadow-[0_0_12px_rgba(0,255,65,0.4)]" 
+                              : "opacity-60 grayscale brightness-75"
+                          }`}
+                        />
+                      </div>
+                      
+                      <div className="text-center space-y-1">
+                        <span className={`block font-mono text-[10px] sm:text-xs font-bold tracking-wider transition-colors duration-300 ${
+                          isHovered ? 'text-white' : 'text-[#4a7a4a]'
+                        }`}>
+                          {skill.name}
+                        </span>
+                        <div className={`h-0.5 mx-auto bg-[#00ff41] transition-all duration-300 ${isHovered ? 'w-full opacity-50' : 'w-0 opacity-0'}`} />
+                      </div>
                     </motion.div>
                   );
                 })}

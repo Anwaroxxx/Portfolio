@@ -16,6 +16,7 @@ import profileImg    from "../assets/large_aazarzou.jpg";
 import qriblikImg   from "../assets/qriblik.png";
 import movieshubImg from "../assets/movieshub.png";
 import yummyImg     from "../assets/yummy-ss.png";
+import omniImg      from "../assets/omni-ss.png";
 
 export { profileImg };
 
@@ -97,6 +98,16 @@ export const projects = [
     category: "frontend",
     link: "https://yummy-restaurant-one.vercel.app/",
     github: "https://github.com/Anwaroxxx/Yummy_Restaurant.git",
+  },
+  {
+    title: "Omni-Agent",
+    description:
+      "A sophisticated AI chatbot interface that provides a clean, ChatGPT-like experience. Seamlessly integrates with AI APIs for intelligent interactions.",
+    image: omniImg,
+    tags: ["React", "API", "Tailwind CSS"],
+    category: "frontend",
+    link: "https://omni-agent-umber.vercel.app/",
+    github: "https://github.com/Anwaroxxx/Omni-Agent.git",
   },
 ];
 
