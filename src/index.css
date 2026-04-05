@@ -10,20 +10,55 @@
   }
 }
 
-/* Custom Scrollbar */
+@layer utilities {
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 200;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 65, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 8s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+  }
+
+  .terminal-flicker {
+    animation: flicker 0.15s ease-in-out infinite;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.95; }
+    30% { opacity: 0.98; }
+    50% { opacity: 0.94; }
+    80% { opacity: 0.99; }
+    90% { opacity: 0.96; }
+    100% { opacity: 0.98; }
+  }
+}
+
+/* Custom Scrollbar Filtered for Tech Look */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #010601;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2d2d2d;
-  border-radius: 4px;
+  background: #0a2a0a;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00f7ff;
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
 }

@@ -15,6 +15,7 @@ import gitIcon       from "../assets/git.svg";
 import profileImg    from "../assets/large_aazarzou.jpg";
 import qriblikImg   from "../assets/qriblik.png";
 import movieshubImg from "../assets/movieshub.png";
+import yummyImg     from "../assets/yummy-ss.png";
 
 export { profileImg };
 
@@ -72,7 +73,8 @@ export const projects = [
     description:
       "A location-based platform connecting people with nearby services and businesses. Clean UX, real-world utility — find what's close to you, fast.",
     image: qriblikImg,
-    tags: ["React", "Tailwind CSS",'API'],
+    tags: ["React", "Tailwind CSS", "API"],
+    category: "fullstack",
     link: "https://qrib-lik.vercel.app/",
     github: "https://github.com/Anwaroxxx/QribLik",
   },
@@ -82,8 +84,19 @@ export const projects = [
       "A sleek movie discovery app — browse, search, and explore films with a clean interface powered by a live movies API.",
     image: movieshubImg,
     tags: ["React", "Tailwind CSS", "API"],
+    category: "frontend",
     link: "https://movies-hub-rust.vercel.app/",
     github: "https://github.com/Anwaroxxx/MoviesHub",
+  },
+  {
+    title: "Yummy Restaurant",
+    description:
+      "A premium restaurant experience with a high-end menu showcase and reservation system. Built with focus on aesthetics and smooth interactions.",
+    image: yummyImg,
+    tags: ["HTML", "SASS", "JavaScript"],
+    category: "frontend",
+    link: "https://yummy-restaurant-one.vercel.app/",
+    github: "https://github.com/Anwaroxxx/Yummy_Restaurant.git",
   },
 ];
 
