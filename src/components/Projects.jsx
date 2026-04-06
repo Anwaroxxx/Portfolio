@@ -10,7 +10,7 @@ const Projects = () => {
     { id: "all", label: "all_projects", icon: <Terminal size={14} /> },
     { id: "frontend", label: "frontend", icon: <Monitor size={14} /> },
     { id: "fullstack", label: "fullstack", icon: <Layers size={14} /> },
-];
+  ];
 
   const filteredProjects = filter === "all" 
     ? projects 
@@ -18,7 +18,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 sm:py-24 bg-[#020802] relative border-t border-[#0a1a0a] overflow-hidden">
-      {/* Background ambient glow */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00ff41]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00ff41]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -92,19 +91,13 @@ const Projects = () => {
                         </span>
                       </div>
                       <div className="relative aspect-video overflow-hidden group">
-                        {/* Global Scanline Animation */}
                         <div className="scanline pointer-events-none z-30" />
-                        
-                        {/* CRT Flicker Overlay */}
                         <div className="absolute inset-0 bg-[#00ff41]/5 group-hover:bg-transparent transition-colors duration-500 z-10 terminal-flicker" />
-                        
                         <img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
                         />
-                        
-                        {/* Status Badge Inside Image */}
                         <div className="absolute bottom-4 left-4 z-30">
                           <span className="font-mono text-[10px] bg-[#020802]/80 border border-[#00ff41]/30 text-[#00ff41] px-2 py-1 rounded backdrop-blur-sm">
                             READY_FOR_DEPLOY
@@ -112,7 +105,6 @@ const Projects = () => {
                         </div>
                       </div>
                     </div>
-                    {/* Decorative corner accents */}
                     <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#00ff41]/50 rounded-tl-sm pointer-events-none" />
                     <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#00ff41]/50 rounded-br-sm pointer-events-none" />
                   </div>
@@ -147,11 +139,13 @@ const Projects = () => {
                     </div>
 
                     <div className="flex items-center gap-8 pt-4">
-                      <a href={project.github} target="_blank" rel="noreferrer"
-                        className="group flex items-center gap-2 text-[#4a7a4a] hover:text-white font-mono text-sm transition-all">
-                        <Github size={18} className="group-hover:rotate-12 transition-transform" /> 
-                        <span className="border-b border-transparent group-hover:border-[#4a7a4a]">source_code</span>
-                      </a>
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noreferrer"
+                          className="group flex items-center gap-2 text-[#4a7a4a] hover:text-white font-mono text-sm transition-all">
+                          <Github size={18} className="group-hover:rotate-12 transition-transform" /> 
+                          <span className="border-b border-transparent group-hover:border-[#4a7a4a]">source_code</span>
+                        </a>
+                      )}
                       <a href={project.link} target="_blank" rel="noreferrer"
                         className="group flex items-center gap-2 text-[#4a7a4a] hover:text-[#00ff41] font-mono text-sm transition-all focus:outline-none">
                         <ExternalLink size={18} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" /> 

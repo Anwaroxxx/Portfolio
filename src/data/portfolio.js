@@ -1,72 +1,71 @@
-import htmlIcon      from "../assets/html.svg";
-import cssIcon       from "../assets/css.svg";
-import reactIcon     from "../assets/react.svg";
+import htmlIcon from "../assets/html.svg";
+import cssIcon from "../assets/css.svg";
+import reactIcon from "../assets/react.svg";
 import bootstrapIcon from "../assets/boostrap.svg";
-import tailwindIcon  from "../assets/tailwindcss.svg";
-import jsIcon        from "../assets/javascript.svg";
-import phpIcon       from "../assets/php.png";
-import laravelIcon   from "../assets/laravel.svg";
-import mysqlIcon     from "../assets/mysql.svg";
-import cIcon         from "../assets/c.svg";
-import bashIcon      from "../assets/bash.svg";
-import linuxIcon     from "../assets/linux.svg";
-import nodeIcon      from "../assets/nodejs.svg";
-import gitIcon       from "../assets/git.svg";
-import profileImg    from "../assets/large_aazarzou.jpg";
-import qriblikImg   from "../assets/qriblik.png";
+import tailwindIcon from "../assets/tailwindcss.svg";
+import jsIcon from "../assets/javascript.svg";
+import phpIcon from "../assets/php.png";
+import laravelIcon from "../assets/laravel.svg";
+import mysqlIcon from "../assets/mysql.svg";
+import cIcon from "../assets/c.svg";
+import bashIcon from "../assets/bash.svg";
+import linuxIcon from "../assets/linux.svg";
+import nodeIcon from "../assets/nodejs.svg";
+import gitIcon from "../assets/git.svg";
+import profileImg from "../assets/large_aazarzou.jpg";
+import qriblikImg from "../assets/qriblik.png";
 import movieshubImg from "../assets/movieshub.png";
-import yummyImg     from "../assets/yummy-ss.png";
-import omniImg      from "../assets/omni-ss.png";
+import yummyImg from "../assets/yummy-ss.png";
+import omniImg from "../assets/omni-ss.png";
+import devradarImg from "../assets/devradar-ss.png";
 
 export { profileImg };
 
-
 export const navLinks = [
-  { name: "Home",       href: "#home"       },
-  { name: "About",      href: "#about"      },
-  { name: "Skills",     href: "#skills"     },
-  { name: "Projects",   href: "#projects"   },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
-  { name: "Contact",    href: "#contact"    },
+  { name: "Contact", href: "#contact" },
 ];
 
 export const skillCategories = [
   {
     label: "Frontend",
     skills: [
-      { name: "HTML",         icon: htmlIcon      },
-      { name: "CSS",          icon: cssIcon       },
-      { name: "React JS",     icon: reactIcon     },
-      { name: "Bootstrap",    icon: bootstrapIcon },
-      { name: "Tailwind CSS", icon: tailwindIcon  },
+      { name: "HTML", icon: htmlIcon },
+      { name: "CSS", icon: cssIcon },
+      { name: "React JS", icon: reactIcon },
+      { name: "Bootstrap", icon: bootstrapIcon },
+      { name: "Tailwind CSS", icon: tailwindIcon },
     ],
   },
   {
     label: "Backend",
     skills: [
-      { name: "PHP",      icon: phpIcon     },
-      { name: "Laravel",  icon: laravelIcon },
-      { name: "Node.js",  icon: nodeIcon    },
+      { name: "PHP", icon: phpIcon },
+      { name: "Laravel", icon: laravelIcon },
+      { name: "Node.js", icon: nodeIcon },
     ],
   },
   {
     label: "Languages",
     skills: [
       { name: "JavaScript", icon: jsIcon },
-      { name: "C",          icon: cIcon  },
+      { name: "C", icon: cIcon },
     ],
   },
   {
     label: "Database & Tools",
     skills: [
       { name: "MySQL", icon: mysqlIcon },
-      { name: "Git",   icon: gitIcon   },
-      { name: "Bash",  icon: bashIcon  },
+      { name: "Git", icon: gitIcon },
+      { name: "Bash", icon: bashIcon },
       { name: "Linux", icon: linuxIcon },
     ],
   },
 ];
-
 
 export const projects = [
   {
@@ -80,14 +79,14 @@ export const projects = [
     github: "https://github.com/Anwaroxxx/QribLik",
   },
   {
-    title: "MoviesHub",
+    title: "DevRadar",
     description:
-      "A sleek movie discovery app — browse, search, and explore films with a clean interface powered by a live movies API.",
-    image: movieshubImg,
-    tags: ["React", "Tailwind CSS", "API"],
-    category: "frontend",
-    link: "https://movies-hub-rust.vercel.app/",
-    github: "https://github.com/Anwaroxxx/MoviesHub",
+      "A full-stack developer discovery platform built with Laravel, React, and MySQL. Search, filter, and explore developer profiles with a clean interface and real-time data.",
+    image: devradarImg,
+    tags: ["Laravel", "React", "MySQL"],
+    category: "fullstack",
+    link: "https://devradar-main-so1vnx.free.laravel.cloud/",
+    github: null,
   },
   {
     title: "Yummy Restaurant",
@@ -108,6 +107,16 @@ export const projects = [
     category: "frontend",
     link: "https://omni-agent-umber.vercel.app/",
     github: "https://github.com/Anwaroxxx/Omni-Agent.git",
+  },
+  {
+    title: "MoviesHub",
+    description:
+      "A sleek movie discovery app — browse, search, and explore films with a clean interface powered by a live movies API.",
+    image: movieshubImg,
+    tags: ["React", "Tailwind CSS", "API"],
+    category: "frontend",
+    link: "https://movies-hub-rust.vercel.app/",
+    github: "https://github.com/Anwaroxxx/MoviesHub",
   },
 ];
 
