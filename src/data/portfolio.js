@@ -153,14 +153,6 @@ export const experience = [
       "Dual-track diploma in climatisation systems and business/commerce fundamentals. Graduated 2024.",
     logo: null,
   },
-  {
-    role: "Brevet / Niveau",
-    company: "High School",
-    period: "2022",
-    description:
-      "Completed secondary education (Niveau) in 2022 — laying the groundwork before diving into tech.",
-    logo: null,
-  },
 ];
 
 export const aboutMe = {
