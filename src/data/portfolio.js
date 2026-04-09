@@ -134,7 +134,7 @@ export const experience = [
     company: "1337",
     period: "2025",
     description:
-      "Survived the brutal 1337 piscine — a month of daily C challenges, zero sleep, and pure fundamentals. Didn't get accepted, but came out knowing how to think like a programmer.",
+      "Survived the brutal 1337 piscine — a month of daily C challenges, zero sleep, and pure fundamentals. Came out knowing how to think like a programmer.",
     logo: "1337",
   },
   {
