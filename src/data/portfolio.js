@@ -88,6 +88,16 @@ export const projects = [
     link: "https://qrib-lik.vercel.app/",
     github: "https://github.com/Anwaroxxx/QribLik",
   },
+    {
+    title: "MoviesHub",
+    description:
+      "A sleek movie discovery app — browse, search, and explore films with a clean interface powered by a live movies API.",
+    image: movieshubImg,
+    tags: ["React", "Tailwind CSS", "API"],
+    category: "frontend",
+    link: "https://movies-hub-rust.vercel.app/",
+    github: null ,
+  },
   {
     title: "Yummy Restaurant",
     description:
@@ -108,16 +118,7 @@ export const projects = [
     link: "https://omni-agent-umber.vercel.app/",
     github: "https://github.com/Anwaroxxx/Omni-Agent.git",
   },
-  {
-    title: "MoviesHub",
-    description:
-      "A sleek movie discovery app — browse, search, and explore films with a clean interface powered by a live movies API.",
-    image: movieshubImg,
-    tags: ["React", "Tailwind CSS", "API"],
-    category: "frontend",
-    link: "https://movies-hub-rust.vercel.app/",
-    github: "https://github.com/Anwaroxxx/MoviesHub",
-  },
+
 ];
 
 export const experience = [
