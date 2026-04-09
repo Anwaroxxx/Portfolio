@@ -8,6 +8,8 @@ import Contact from "./components/Contact";
 import BinaryRain from "./components/Binaryrain";
 import PointerNav from "./components/Pointernav";
 import CommandPalette from "./components/CommandPalette";
+import RetroOverlay from "./components/RetroOverlay";
+import TerminalCursor from "./components/TerminalCursor";
 import { aboutMe } from "./data/portfolio";
 import { Terminal } from "lucide-react";
 
@@ -27,7 +29,9 @@ function App() {
   }, [isCmdOpen]);
 
   return (
-    <div className="bg-[#010501] min-h-screen text-gray-200 selection:bg-[#00ff41] selection:text-black font-sans relative">
+    <div className="bg-[#010501] min-h-screen text-gray-200 selection:bg-[#00ff41] selection:text-black font-sans relative cursor-none">
+      <RetroOverlay />
+      <TerminalCursor />
       <BinaryRain />
       <PointerNav />
       <CommandPalette isOpen={isCmdOpen} onClose={() => setIsCmdOpen(false)} />

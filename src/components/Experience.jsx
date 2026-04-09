@@ -12,59 +12,78 @@ const Logo1337 = () => (
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 sm:py-24 bg-[#010501] relative">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+    <section id="experience" className="py-20 sm:py-24 bg-[#010501] relative overflow-hidden">
+        {/* Background depth lines */}
+        <div className="absolute left-1/2 -top-24 w-px h-64 bg-gradient-to-b from-transparent via-[#00ff41]/10 to-transparent" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-16"
+          className="text-left mb-14 sm:mb-20 border-l-2 border-[#00ff41] pl-6"
         >
-          <p className="font-mono text-[#00ff41] text-xs tracking-[4px] uppercase mb-3">// experience.log</p>
-          <h2 className="font-mono text-3xl sm:text-4xl font-black text-[#e0ffe0] mb-4">My Journey</h2>
-          <p className="text-[#4a7a4a] text-sm sm:text-base">The path that shaped the code.</p>
+          <p className="font-mono text-[#00ff41] text-xs tracking-[4px] uppercase mb-3">$ journalctl -u career.service</p>
+          <h2 className="font-mono text-3xl sm:text-4xl font-black text-[#e0ffe0] mb-4 uppercase">Career Timeline</h2>
+          <p className="text-[#4a7a4a] text-sm sm:text-base italic opacity-60">Chronological execution of professional milestones and learning cycles...</p>
         </motion.div>
 
-        <div className="relative border-l border-[#0a2a0a] ml-3 pl-8 sm:ml-4 sm:pl-10 space-y-8">
+        <div className="space-y-4">
           {experience.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="relative"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-20px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="group"
             >
-              {/* Timeline dot */}
-              <div className={`absolute -left-[37px] sm:-left-[45px] top-[10px] w-4 h-4 rounded-full border-2 border-[#00ff41] transition-all ${
-                exp.logo === "1337" ? "bg-[#00ff41] shadow-[0_0_14px_#00ff41]" : "bg-[#010e01]"
-              }`} />
-
-              <div className="bg-[#010801] border border-[#0a2a0a] hover:border-[#1a5a1a] transition-all duration-200 p-5 sm:p-7 rounded-xl group relative overflow-hidden">
-                {/* Left glow on hover */}
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#00ff41] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
-                  <div>
-                    <h3 className="font-mono text-base sm:text-lg font-black text-[#e0ffe0]">{exp.role}</h3>
-                    <div className="mt-1.5">
-                      {exp.logo === "1337"
-                        ? <Logo1337 />
-                        : <span className="font-mono text-[#00ff41] text-sm">{exp.company}</span>
-                      }
-                    </div>
-                  </div>
-                  <span className="font-mono text-xs text-[#2a5a2a] bg-[#010601] border border-[#0a2a0a] px-3 py-1 rounded-full self-start whitespace-nowrap">
-                    {exp.period}
-                  </span>
+              <div className="flex bg-[#020a02]/40 border border-[#1a1a1a] hover:border-[#00ff41]/30 transition-all duration-300 rounded overflow-hidden">
+                {/* Simulated timestamp like in dmesg */}
+                <div className="hidden sm:flex flex-col items-center justify-center bg-[#010801] px-4 py-6 border-r border-[#1a1a1a] min-w-[140px]">
+                    <span className="font-mono text-[10px] text-[#2a5a2a]">[ {exp.period.split("–")[0].trim().padStart(8, '0')} ]</span>
                 </div>
 
-                <p className="text-[#4a7a4a] text-sm leading-relaxed">{exp.description}</p>
+                <div className="flex-1 p-5 sm:p-7 relative">
+                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                      <div>
+                        <div className="flex items-center gap-3 mb-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#00ff41] animate-pulse" />
+                            <h3 className="font-mono text-base sm:text-lg font-black text-white group-hover:text-[#00ff41] transition-colors uppercase tracking-tight">
+                                {exp.role}
+                            </h3>
+                        </div>
+                        <div className="flex items-center gap-3 opacity-60">
+                            {exp.logo === "1337"
+                                ? <Logo1337 />
+                                : <span className="font-mono text-[#00ff41] text-xs">@ {exp.company}</span>
+                            }
+                        </div>
+                      </div>
+                      <div className="sm:hidden font-mono text-[10px] text-[#2a5a2a]">
+                        [{exp.period}]
+                      </div>
+                      <span className="hidden sm:block font-mono text-[10px] text-[#0a2a0a] uppercase tracking-widest pt-1">
+                        STATE: COMPLETED
+                      </span>
+                   </div>
+
+                   <p className="text-[#4a7a4a] text-sm font-light leading-relaxed border-t border-[#1a1a1a] pt-4 italic">
+                      {exp.description}
+                   </p>
+                </div>
               </div>
             </motion.div>
           ))}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="pt-6 font-mono text-[10px] text-[#0a2a0a] text-center uppercase tracking-[6px]"
+          >
+            -- End of Journal --
+          </motion.div>
         </div>
       </div>
     </section>

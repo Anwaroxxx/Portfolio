@@ -18,76 +18,88 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-20"
+          className="text-left mb-14 sm:mb-20 border-l-2 border-[#00ff41] pl-6"
         >
-          <p className="font-mono text-[#00ff41] text-xs tracking-[4px] uppercase mb-3">// system.capabilities</p>
-          <h2 className="font-mono text-3xl sm:text-5xl font-black text-[#e0ffe0] mb-4 tracking-tighter">Technical Arsenal</h2>
-          <p className="text-[#4a7a4a] max-w-xl mx-auto text-sm sm:text-base font-light">Advanced toolsets for architectural design and high-performance shipping.</p>
+          <p className="font-mono text-[#00ff41] text-xs tracking-[4px] uppercase mb-3">$ ls -R /system/capabilities</p>
+          <h2 className="font-mono text-3xl sm:text-5xl font-black text-[#e0ffe0] mb-4 tracking-tighter uppercase">Capability Matrix</h2>
+          <p className="text-[#4a7a4a] max-w-xl text-sm sm:text-base font-light italic opacity-60">Scanning internal logic gates and frontend render engines...</p>
         </motion.div>
 
         {/* Categories */}
-        <div className="space-y-16 sm:space-y-24">
+        <div className="space-y-12 sm:space-y-16">
           {skillCategories.map((cat, catIdx) => (
             <motion.div
               key={cat.label}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: catIdx * 0.1 }}
+              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+              className="bg-[#020a02]/40 border border-[#00ff41]/10 rounded-lg p-6 sm:p-8"
             >
-              {/* Category label */}
-              <div className="flex items-center gap-6 mb-10">
-                <div className="px-4 py-1.5 border border-[#00ff41]/30 bg-[#00ff41]/5 rounded-sm">
-                  <span className="font-mono text-xs text-[#00ff41] tracking-[4px] uppercase font-bold">
-                    {cat.label}
-                  </span>
-                </div>
-                <div className="flex-1 h-px bg-gradient-to-r from-[#00ff41]/30 to-transparent" />
+              {/* Category label as simple directory name */}
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-mono text-sm text-[#00ff41] font-bold">./{cat.label.toLowerCase()}</span>
+                <div className="flex-1 h-px bg-[#00ff41]/10" />
+                <span className="font-mono text-[9px] text-[#0a2a0a] uppercase tracking-widest hidden sm:block">Total_Modules: {cat.skills.length}</span>
               </div>
 
               {/* Skills grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-12">
                 {cat.skills.map((skill, skillIdx) => {
                   const key = `${catIdx}-${skillIdx}`;
                   const isHovered = hovered === key;
                   
+                  // Simulated experience levels
+                  const levels = {
+                    "HTML": 95, "CSS": 90, "React JS": 92, "Bootstrap": 85, "Tailwind CSS": 95,
+                    "PHP": 88, "Laravel": 90, "Node.js": 80,
+                    "JavaScript": 94, "C": 75,
+                    "MySQL": 85, "Git": 90, "Bash": 80, "Linux": 85
+                  };
+                  const level = levels[skill.name] || 80;
+                  const barsCount = Math.floor(level / 5);
+                  
                   return (
-                    <motion.div
+                    <div
                       key={skill.name}
                       onMouseEnter={() => setHovered(key)}
                       onMouseLeave={() => setHovered(null)}
-                      whileHover={{ y: -5, scale: 1.02 }}
-                      className={`relative group p-6 rounded-xl border transition-all duration-300 flex flex-col items-center gap-4 ${
-                        isHovered
-                          ? "border-[#00ff41] bg-[#00ff41]/5 shadow-[0_0_30px_rgba(0,255,65,0.15)]"
-                          : "border-[#0a2a0a] bg-[#010801]/60 backdrop-blur-sm"
-                      }`}
+                      className="group cursor-default"
                     >
-                      {/* Interactive corner highlights on hover */}
-                      <div className={`absolute top-0 left-0 w-2 h-2 border-t border-l border-[#00ff41] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
-                      <div className={`absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#00ff41] transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
-
-                      <div className="relative">
-                         <img
-                          src={skill.icon}
-                          alt={skill.name}
-                          className={`w-12 h-12 object-contain transition-all duration-500 ${
-                            isHovered 
-                              ? "scale-110 rotate-3 filter-none drop-shadow-[0_0_12px_rgba(0,255,65,0.4)]" 
-                              : "opacity-60 grayscale brightness-75"
-                          }`}
-                        />
+                      <div className="flex items-center justify-between mb-2">
+                         <div className="flex items-center gap-3">
+                            <img
+                              src={skill.icon}
+                              alt={skill.name}
+                              className={`w-5 h-5 object-contain transition-all duration-300 ${isHovered ? 'opacity-100 grayscale-0' : 'opacity-40 grayscale'}`}
+                            />
+                            <span className={`font-mono text-xs font-bold transition-colors ${isHovered ? 'text-[#00ff41]' : 'text-[#4a9a4a]'}`}>
+                              {skill.name}
+                            </span>
+                         </div>
+                         <span className="font-mono text-[10px] text-[#0a2a0a]">{level}%</span>
                       </div>
                       
-                      <div className="text-center space-y-1">
-                        <span className={`block font-mono text-[10px] sm:text-xs font-bold tracking-wider transition-colors duration-300 ${
-                          isHovered ? 'text-white' : 'text-[#4a7a4a]'
-                        }`}>
-                          {skill.name}
-                        </span>
-                        <div className={`h-0.5 mx-auto bg-[#00ff41] transition-all duration-300 ${isHovered ? 'w-full opacity-50' : 'w-0 opacity-0'}`} />
+                      {/* Terminal Progress Bar style */}
+                      <div className="flex items-center gap-1.5 font-mono text-[10px]">
+                        <span className="text-[#0a2a0a]">[</span>
+                        <div className="flex-1 flex gap-0.5">
+                          {Array.from({ length: 20 }).map((_, i) => (
+                             <motion.div 
+                               key={i}
+                               initial={{ opacity: 0.1 }}
+                               whileInView={{ opacity: i < barsCount ? 1 : 0.1 }}
+                               className={`h-2.5 flex-1 rounded-sm transition-colors ${
+                                 i < barsCount 
+                                   ? isHovered ? 'bg-[#00ff41] shadow-[0_0_8px_#00ff41]' : 'bg-[#00ff41]/40'
+                                   : 'bg-[#1a2a1a]'
+                               }`}
+                             />
+                          ))}
+                        </div>
+                        <span className="text-[#0a2a0a]">]</span>
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>

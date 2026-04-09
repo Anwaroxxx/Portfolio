@@ -51,12 +51,12 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-6 sm:space-y-8 text-center lg:text-left"
         >
-          <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-[#00ff41]/20 bg-[#00ff41]/5 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,65,0.1)]">
+          <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-[#00ff41]/20 bg-[#00ff41]/5 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,65,0.1)] mb-4">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff41] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ff41]"></span>
             </span>
-            <span className="font-mono text-[10px] text-[#00ff41] tracking-[2px] uppercase">System Online: v4.2.0</span>
+            <span className="font-mono text-[10px] text-[#00ff41] tracking-[2px] uppercase">System Online: v4.2.0-LTS</span>
           </div>
 
           <div className="space-y-4">
@@ -64,11 +64,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="font-mono text-5xl sm:text-7xl md:text-8xl font-black leading-[0.9] text-white"
+              className="font-mono text-5xl sm:text-7xl md:text-8xl font-black leading-[0.9] text-white group"
             >
               <span className="block text-[#e0ffe0] opacity-90 text-4xl sm:text-5xl mb-2 font-light italic">Hello, I'm</span>
-              <span className="text-[#00ff41] drop-shadow-[0_0_30px_rgba(0,255,65,0.4)]">
+              <span className="text-[#00ff41] drop-shadow-[0_0_30px_rgba(0,255,65,0.4)] relative inline-block">
                 {aboutMe.name}
+                <motion.span 
+                  className="absolute -inset-1 bg-[#00ff41]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"
+                  animate={{ opacity: [0, 0.2, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
               </span>
             </motion.h1>
             
@@ -100,15 +105,15 @@ const Hero = () => {
             className="flex flex-wrap gap-5 justify-center lg:justify-start pt-4"
           >
             <a href="#projects"
-              className="group relative px-8 py-4 bg-[#00ff41] text-black font-mono font-black text-sm rounded overflow-hidden transition-all hover:shadow-[0_0_30px_#00ff4190]">
+              className="group relative px-8 py-4 bg-[#00ff41] text-black font-mono font-black text-sm rounded overflow-hidden transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_40px_rgba(0,255,65,0.5)]">
               <span className="relative z-10 flex items-center gap-2">
-                <Terminal size={18} /> ./EXPLORE_PROJECTS
+                <Terminal size={18} /> env run ./EXPLORE
               </span>
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
             <a href="#contact"
-              className="px-8 py-4 border-2 border-[#1a4a1a] text-[#4a9a4a] font-mono text-sm rounded hover:border-[#00ff41] hover:text-[#00ff41] hover:bg-[#00ff41]/5 transition-all shadow-[0_0_15px_rgba(0,255,65,0.05)]">
-              ./CONTACT_HANDSHAKE
+              className="px-8 py-4 border-2 border-[#1a4a1a] text-[#4a9a4a] font-mono text-sm rounded hover:border-[#00ff41] hover:text-[#00ff41] hover:bg-[#00ff41]/10 transition-all shadow-[0_0_20px_rgba(0,255,65,0.05)] flex items-center gap-2 group">
+              <span className="text-[#00ff41] opacity-40 group-hover:opacity-100 transition-opacity">$</span> cd /contact
             </a>
           </motion.div>
 
@@ -216,9 +221,24 @@ const Hero = () => {
                $ tail -f mindset.log
             </div>
             <div className="text-[#00ff41] overflow-hidden whitespace-nowrap border-r-2 border-[#00ff41] pr-1">
-              100% focused on value...
+              100% focused on quality...
             </div>
           </motion.div>
+
+          <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex gap-12 text-[9px] font-mono text-[#0a2a0a] uppercase tracking-[3px] opacity-40 hidden md:flex">
+             <div className="flex flex-col items-center">
+               <span className="text-[#00ff41]">LATENCY</span>
+               <span>1.2ms</span>
+             </div>
+             <div className="flex flex-col items-center">
+               <span className="text-[#00ff41]">LOC</span>
+               <span>~84K</span>
+             </div>
+             <div className="flex flex-col items-center">
+               <span className="text-[#00ff41]">COFFEE</span>
+               <span>CRITICAL_LOW</span>
+             </div>
+          </div>
         </motion.div>
 
       </div>

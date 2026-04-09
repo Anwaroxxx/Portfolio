@@ -68,6 +68,16 @@ export const skillCategories = [
 ];
 
 export const projects = [
+    {
+    title: "DevRadar",
+    description:
+      "A full-stack developer discovery platform built with Laravel, React, and MySQL. Search, filter, and explore developer profiles with a clean interface and real-time data.",
+    image: devradarImg,
+    tags: ["Laravel", "React", "MySQL"],
+    category: "fullstack",
+    link: "https://devradar-main-so1vnx.free.laravel.cloud/",
+    github: null,
+  },
   {
     title: "Qrib-Lik",
     description:
@@ -77,16 +87,6 @@ export const projects = [
     category: "fullstack",
     link: "https://qrib-lik.vercel.app/",
     github: "https://github.com/Anwaroxxx/QribLik",
-  },
-  {
-    title: "DevRadar",
-    description:
-      "A full-stack developer discovery platform built with Laravel, React, and MySQL. Search, filter, and explore developer profiles with a clean interface and real-time data.",
-    image: devradarImg,
-    tags: ["Laravel", "React", "MySQL"],
-    category: "fullstack",
-    link: "https://devradar-main-so1vnx.free.laravel.cloud/",
-    github: null,
   },
   {
     title: "Yummy Restaurant",
