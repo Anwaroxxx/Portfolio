@@ -15,7 +15,7 @@ import gitIcon from "../assets/git.svg";
 import profileImg from "../assets/large_aazarzou.jpg";
 import qriblikImg from "../assets/qriblik.png";
 import movieshubImg from "../assets/movieshub.png";
-import yummyImg from "../assets/yummy-ss.png";
+import fasheImg from "../assets/fashe-ss.png";
 import omniImg from "../assets/omni-ss.png";
 import devradarImg from "../assets/devradar-ss.png";
 
@@ -68,50 +68,51 @@ export const skillCategories = [
 ];
 
 export const projects = [
-    {
+  
+  {
     title: "DevRadar",
     description:
-      "A full-stack developer discovery platform built with Laravel, React, and MySQL. Search, filter, and explore developer profiles with a clean interface and real-time data.",
+      "A sophisticated full-stack developer discovery platform. Built with a focus on high-performance search, filtering, and real-time profile management using a robust Laravel & React architecture.",
     image: devradarImg,
     tags: ["Laravel", "React", "MySQL"],
     category: "fullstack",
     link: "https://devradar-main-so1vnx.free.laravel.cloud/",
     github: null,
-  },
-  {
+  },{
     title: "Qrib-Lik",
     description:
-      "A location-based platform connecting people with nearby services and businesses. Clean UX, real-world utility — find what's close to you, fast.",
+      "A clean, location-based platform connecting users with nearby services and businesses. Features a streamlined UX designed for fast, real-world utility.",
     image: qriblikImg,
     tags: ["React", "Tailwind CSS", "API"],
     category: "fullstack",
     link: "https://qrib-lik.vercel.app/",
     github: "https://github.com/Anwaroxxx/QribLik",
   },
-    {
+  {
+    title: "Fashe Atelier",
+    description:
+      "A premium e-commerce collective specializing in archival fashion and modern silhouettes. Implemented with a sophisticated 'Nordic Noir' aesthetic, focusing on high-end user experience and seamless product discovery.",
+    image: fasheImg,
+    tags: ["React", "Custom CSS", "E-commerce"],
+    category: "frontend",
+    link: "https://fashe-gray.vercel.app/",
+    github: null,
+  },
+  {
     title: "MoviesHub",
     description:
-      "A sleek movie discovery app — browse, search, and explore films with a clean interface powered by a live movies API.",
+      "A cinematic entertainment platform featuring a high-end, professional UI. Integrates real-time movie data with an immersive, no-scroll landing experience and a perfectly refined design system.",
     image: movieshubImg,
     tags: ["React", "Tailwind CSS", "API"],
     category: "frontend",
     link: "https://movies-hub-rust.vercel.app/",
     github: null ,
   },
-  {
-    title: "Yummy Restaurant",
-    description:
-      "A premium restaurant experience with a high-end menu showcase and reservation system. Built with focus on aesthetics and smooth interactions.",
-    image: yummyImg,
-    tags: ["HTML", "SASS", "JavaScript"],
-    category: "frontend",
-    link: "https://yummy-restaurant-one.vercel.app/",
-    github: "https://github.com/Anwaroxxx/Yummy_Restaurant.git",
-  },
+  
   {
     title: "Omni-Agent",
     description:
-      "A sophisticated AI chatbot interface that provides a clean, ChatGPT-like experience. Seamlessly integrates with AI APIs for intelligent interactions.",
+      "A sophisticated AI chatbot interface providing a premium, intelligent interaction experience. Seamlessly integrates with advanced AI models through a sleek, modern UI.",
     image: omniImg,
     tags: ["React", "API", "Tailwind CSS"],
     category: "frontend",
