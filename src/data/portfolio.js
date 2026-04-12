@@ -108,17 +108,6 @@ export const projects = [
     link: "https://movies-hub-rust.vercel.app/",
     github: null ,
   },
-  
-  {
-    title: "Omni-Agent",
-    description:
-      "A sophisticated AI chatbot interface providing a premium, intelligent interaction experience. Seamlessly integrates with advanced AI models through a sleek, modern UI.",
-    image: omniImg,
-    tags: ["React", "API", "Tailwind CSS"],
-    category: "frontend",
-    link: "https://omni-agent-umber.vercel.app/",
-    github: "https://github.com/Anwaroxxx/Omni-Agent.git",
-  },
 
 ];
 
